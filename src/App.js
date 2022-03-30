@@ -9,10 +9,12 @@ import NotePage from "./pages/NotePage";
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
+    <div className="container dark">
+      <div className="app">
       <Header/>
       <Route component={NotesPage} path="/" exact />
       <Route component={NotePage} path="/note/:id" />
+    </div>
     </div>
     </BrowserRouter>
   );
