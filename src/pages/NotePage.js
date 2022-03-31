@@ -14,13 +14,13 @@ function NotePage({match, history}) {
     let getNotes = async() =>{
         if(noteId  === 'new') return
 
-    let response = await fetch(`http://127.0.0.1:5000/notes/${noteId}`);
+    let response = await fetch(`https://json-note-server.herokuapp.com/notes/${noteId}`);
     let data = await response.json();
         setNote(data);
     };
 
     let createNote = async() =>{
-        await fetch(`http://127.0.0.1:5000/notes/`,{
+        await fetch(`https://json-note-server.herokuapp.com/notes/`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -30,7 +30,7 @@ function NotePage({match, history}) {
     };
 
     let updateNote = async() =>{
-        await fetch(`http://127.0.0.1:5000/notes/${noteId}`,{
+        await fetch(`https://json-note-server.herokuapp.com/notes/${noteId}`,{
             method:'PUT',
             headers:{
                 'Content-Type':'application/json'
@@ -40,7 +40,7 @@ function NotePage({match, history}) {
     };
 
     let deleteNote = async () => {
-        await fetch(`http://127.0.0.1:5000/notes/${noteId}`,{
+        await fetch(`https://json-note-server.herokuapp.com/notes/${noteId}`,{
             method: 'DELETE',
             headers: {
                 'Content-Type':'application/json'
